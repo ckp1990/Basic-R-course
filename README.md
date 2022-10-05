@@ -1,1 +1,1 @@
-# Basic-R-course
+# Basic R course

@@ -1,0 +1,54 @@
+---
+title: " R Programming"
+author: "Chandan Kumar Pandey"
+date: "`r Sys.Date()`"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## What is R ?
+
+-   R is the language and environment for statistical computing and graphics.
+-   R provides a wide variety of statistical and graphical techniques, and is highly extensible.
+-   data manipulation, calculation and graphical display
+-   Founded by [Ross Ihaka](https://en.wikipedia.org/wiki/Ross_Ihaka) and [Robert Gentleman](https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)) in 1991.
+-   It contains function and open source packages that facilitate the user to computation goals
+
+![](./R_logo.png){width="125"}
+
+## What R can do ?
+
+### Some examples are
+
+-   an effective data handling and storage facility,
+-   a suite of operators for calculations on arrays, in particular matrices,
+-   a large, coherent, integrated collection of intermediate tools for data analysis
+-   graphical facilities for data analysis and display either on-screen or on hard copy,
+-   a well-developed, simple and effective programming language which includes conditionals, loops, user-defined recursive functions and input and output facilities.
+
+## Continued ....
+
+### some recent developments
+
+-   write a paper
+-   Prepare a web app using 
+
+![](./shiny.png){width="108"}
+
+-   Prepare presentation ; "like this ppt"
+-   Run the simulation
+-   connect with other programming language and database.
+
+## Let us begin.
+
+
+## How to download R environemt and other important softwares.
+
+-   <https://cloud.r-project.org/>
+-   <https://www.rstudio.com/products/rstudio/download/#download>
+-   <https://code.visualstudio.com/> (optional but powerful for cross platform works.)
+-   <https://git-scm.com/> (for version control)
+-   To learn git please look (<https://www.youtube.com/watch?v=8JJ101D3knE>)

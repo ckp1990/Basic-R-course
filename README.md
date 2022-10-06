@@ -1,8 +1,5 @@
 # Basic R course
-Beginner course in R; R programming 101
 
-Course overview: 
-This course will cover the basics of R programming and simple mathematical calculations using codes. Participants will be introduced to various R working environments such as R IDE, RStudio, and VS-code. Further, the focus will be on the Art of programming, followed by simple data handling and wrangling.
 
 Perquisite: 
 •	Computer with R and Rstudio (or your favourite IDE.) 

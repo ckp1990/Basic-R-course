@@ -168,7 +168,7 @@ There are 5 type or broad classification of variable types in R. They are
 1. Vector : They are the one dimensional list of items that are of same type. We need to use function *c()* and separate items using "," to create a vector.
 ```{r,vector}
 #this is the example for vector of string
-names<-c("chandan","Syed","Kamala")
+names<-c("chandan","Pandey","Kumar")
 print(names)
 
 ##vector of numbers 

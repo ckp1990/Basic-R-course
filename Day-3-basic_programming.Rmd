@@ -1,0 +1,100 @@
+---
+title: "Day 3 R basic workbook"
+output:
+  pdf_document: default
+author: "Chandan Kumar Pandey"
+date: 07-10-2022  
+---
+
+In today's we will discuss the conditional statements. [ex: if -else],loops,and functions [local] in R
+
+### Conditional statements
+Conditional statements or expression in any computer language will help in making decision. For example if we need to check if the student have passed or fail. Even more, if we are deciding on the grade of the student based on score. 
+
+Lets check this example with the case study
+
+```{r student data, warning=F,echo=T}
+Student_performance <- read.csv("StudentsPerformance.csv",header = T)
+## The data set contain result of 1000 students
+## let us see some basic attribute of this data frame
+head(Student_performance,n = 10) ## first 10 rows
+tail(Student_performance,n=10) ##last 10 rows
+```
+
+#### If statement in R
+
+Now as you can see from the above output that some student have completed the preparation course while other have not. In order to check if the student have completed the test prepration we will use if statement
+
+```{r if statement, echo=T}
+if(Student_performance$test.preparation.course[1]=="completed"){
+  print("I came ready to take the test")
+} ## note there is no output here because the first student have not competed this. check the #table above
+if(Student_performance$test.preparation.course[2]=="completed"){
+  print("I came ready to take the test")
+} ## now you will see the output as second student have completed it. 
+```
+
+Now, using if statement will only execute the command if and only if the statement inside the parenthesis is true. However, in case where the statement is false not output was generate. Now if we want to generate the output in the case were statement is true or false then we have to used if-else statement.
+
+Explaining with the same examples. 
+
+```{r ifelse statement, echo=T}
+if(Student_performance$test.preparation.course[1]=="completed"){
+  print("I came ready to take the test")
+}else{
+  print("Thats not fare I was not ready")
+}
+
+if(Student_performance$test.preparation.course[2]=="completed"){
+  print("I came ready to take the test")
+} else{
+  print("Thats not fare I was not ready")
+}
+```
+
+In many occasions, we need to take multiple levels of decision. For example while grading. Let us assume that score between 80-100 get A, 60-79 get B and 40-59 get C and below 40 get F
+
+Lets code for this. 
+
+```{r if-else-if,echo=T}
+#for student 8
+if(Student_performance$writing.score[8]<40){
+  print("You failed, better luck for next exam")
+} else if (Student_performance$writing.score[8]<=59 & Student_performance$writing.score[8]>=40){
+  print("Your grade is C; need to improve")
+} else if (Student_performance$writing.score[8]<=79 & Student_performance$writing.score[8]>=60){
+  print("your grade is B; almost there, keep trying")
+} else{
+  print("Your grade is A; great job")
+}
+# for student 82
+if(Student_performance$writing.score[82]<40){
+  print("You failed, better luck for next exam")
+} else if (Student_performance$writing.score[82]<=59 & Student_performance$writing.score[82]>=40){
+  print("Your grade is C; need to improve")
+} else if (Student_performance$writing.score[82]<=79 & Student_performance$writing.score[82]>=60){
+  print("your grade is B; almost there, keep trying")
+} else{
+  print("Your grade is A; great job")
+}
+#for student 29
+if(Student_performance$writing.score[29]<40){
+  print("You failed, better luck for next exam")
+} else if (Student_performance$writing.score[29]<=59 & Student_performance$writing.score[29]>=40){
+  print("Your grade is C; need to improve")
+} else if (Student_performance$writing.score[29]<=79 & Student_performance$writing.score[29]>=60){
+  print("your grade is B; almost there, keep trying")
+} else{
+  print("Your grade is A; great job")
+}
+# for student number 3
+if(Student_performance$writing.score[3]<40){
+  print("You failed, better luck for next exam")
+} else if (Student_performance$writing.score[3]<=59 & Student_performance$writing.score[3]>=40){
+  print("Your grade is C; need to improve")
+} else if (Student_performance$writing.score[3]<=79 & Student_performance$writing.score[3]>=60){
+  print("your grade is B; almost there, keep trying")
+} else{
+  print("Your grade is A; great job")
+}
+```

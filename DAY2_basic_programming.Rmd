@@ -28,6 +28,7 @@ In R, variable is a place holder of value in the program. For example below.
 
 ```{r}
 x<-5
+#5->x
 y<-8
 z<-5
 ```
@@ -90,7 +91,7 @@ y<-2>3 & 3==3
 print(y) # first condition is true and second condition is false. To y is false. 
 
 # OR operator : Compare two condition and return True  if any one condition is true. the operator is |
-z<-2==2 | 3==3 
+z<- 2==2 | 3==3 
 print(z) ## both condition it true
 y<-2>3 | 3==3
 print(y) # first condition is true and second condition is false. To y is true 
@@ -135,7 +136,8 @@ class(y)
 x <- "Hello world"
 class(x)
 # logical/boolean
-x <- TRUE
+x <- T
+x <- "TRUE"
 class(x)
 # complex
 x <- 7i + 88
@@ -188,7 +190,7 @@ print(numbers[1])
 ```{r}
 my_matrix<-matrix(c(1,2,3,4,5,6,7,8),nrow = 4,ncol = 2)
 print(my_matrix)
-my_matrix2<-matrix(c(1,2,3,4,5,6,7,8),nrow = 2,ncol = 4)
+my_matrix2<-matrix(c(1,2,3,4,5,6,7,8),nrow = 2,ncol = 4,byrow = T)
 print(my_matrix2)
 ```
 
@@ -217,8 +219,8 @@ You can see that in output green < red < blue. This will help in ploting graphs 
 ```{r}
 Data_Frame <- data.frame (
   Training = c("Strength", "Stamina", "Other"),
-  Pulse = c(100, 150, 120),
-  Duration = c(60, 30, 45)
+  Pulse =as.character(c(100L, 150L, 120L)),
+  Duration = c(60.0, 30, 45)
 )
 
 print(Data_Frame)
@@ -234,6 +236,7 @@ list1<-list(Data_Frame,color_names,my_matrix2)
 list2<-list(car10,names)
 print(list1)
 print(list2)
-list3<-c(list1,list2)
+c()
+list3<-list(list1,list2)
 print(list3)
 ```

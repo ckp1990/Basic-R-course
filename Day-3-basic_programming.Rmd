@@ -1,14 +1,14 @@
 ---
-title: "Day 3 R basic workbook"
+title: "Day 3 and 4 R basic workbook"
 output:
   pdf_document: default
 author: "Chandan Kumar Pandey"
-date: 07-10-2022  
+date: 08-10-2022  
 ---
 
 In today's we will discuss the conditional statements. [ex: if -else],loops,and functions [local] in R
 
-### Conditional statements
+## Conditional statements
 Conditional statements or expression in any computer language will help in making decision. For example if we need to check if the student have passed or fail. Even more, if we are deciding on the grade of the student based on score. 
 
 Lets check this example with the case study
@@ -19,11 +19,21 @@ Student_performance <- read.csv("StudentsPerformance.csv",header = T)
 ## let us see some basic attribute of this data frame
 head(Student_performance,n = 10) ## first 10 rows
 tail(Student_performance,n=10) ##last 10 rows
+str(Student_performance) ##structure of your dataset
+##summary of my data frame
+summary(Student_performance)
+##name of the col
+names(Student_performance)
+##in order access an element or col of data frame 
+#Student_performance$gender
 ```
 
-#### If statement in R
+## If statement in R
 
-Now as you can see from the above output that some student have completed the preparation course while other have not. In order to check if the student have completed the test prepration we will use if statement
+Now as you can see from the above output that some student have completed the preparation course while other have not. In order to check if the student have completed the test preparation we will use if statement
+
+### if(conditon){function/command}.
+
 
 ```{r if statement, echo=T}
 if(Student_performance$test.preparation.course[1]=="completed"){
@@ -34,10 +44,12 @@ if(Student_performance$test.preparation.course[2]=="completed"){
 } ## now you will see the output as second student have completed it. 
 ```
 
+### ifesle statments 
+
 Now, using if statement will only execute the command if and only if the statement inside the parenthesis is true. However, in case where the statement is false not output was generate. Now if we want to generate the output in the case were statement is true or false then we have to used if-else statement.
 
 Explaining with the same examples. 
-
+#if(condition){command/function}else{command}
 ```{r ifelse statement, echo=T}
 if(Student_performance$test.preparation.course[1]=="completed"){
   print("I came ready to take the test")
@@ -97,4 +109,158 @@ if(Student_performance$writing.score[3]<40){
 } else{
   print("Your grade is A; great job")
 }
+Student_performance[c(8,82,29,3),]
 ```
+
+Some time it is within a if statement there is another if else statement. Such scenarios is called nested is else statement. For example let us assume that passing mark for ethnic group B is 35 while group A,c and D  is 41. Let understand this example by code. 
+
+```{r nestedifelse, echo=T}
+## for student number 8 in maths
+if(Student_performance$race.ethnicity[116]=="group B"){
+  if(Student_performance$math.score[116]>=35){
+    print("You are group B and Pass")
+  } else { print("Fail")
+    }
+}else {
+  if(Student_performance$math.score[116]>40){
+    print("You are not from group B and Pass")
+  } else {print("Fail")
+    }
+}
+```
+
+### Looping the command
+
+You can clearly see from the above examples, we have to apply same logic for all rows of data frame. It is a repetitive process. so we can run the same script in the loop.
+
+**For example,  to pass the exam the student need to**
+
+* score min of 40 in each paper.
+* get on average 45 in all three paper. 
+
+Now this task require applying the same logic for all rows. 
+
+## For loop or definte loop
+
+```{r for loop example1, echo=T}
+##creating a vector with all NA
+final_results <- rep(NA,nrow(Student_performance))
+for(i in 1:nrow(Student_performance)){
+  if(Student_performance$math.score[i]>=40 & 
+     Student_performance$reading.score[i]>=40 & 
+     Student_performance$writing.score[i]>=40){
+    average_percent<- sum(Student_performance[i,6:8])/3
+    if(average_percent>=45){
+      final_results[i]=round(average_percent,2)
+    }else{
+      final_results[i]="Fail"
+    }
+  }else{
+    final_results[i]="Fail"
+  }
+}
+Student_performance$final_result <- final_results
+```
+
+
+## For example 2
+
+In your first example we have looped over the increase of i , then i was used to amend the values in the vector, *final_result*. In this case the value of i starts with 1 and increase by 1 till it reaches 1000. 
+
+However one can directly loop over the name of the vector. Let see with the example. If we have given gender code F to female and M to male
+
+```{r for loop ex2,echo=T}
+t=1
+Gender_code<-rep(NA,nrow(Student_performance))
+for(j in Student_performance$gender){
+  if(j=="male"){
+    Gender_code[t]="M"
+  }else{
+    Gender_code[t]="F"
+  }
+  t=t+1
+}
+Student_performance$gender_code<-Gender_code
+```
+
+## while loop or indefente loop
+
+In both cases above we were sure that now many time loop will iterate. However, some time we do not have idea how many time the loop will iterate. This is called indefinite loop or while loop. Let say we have to generate a random number and add to existing number till the number is greater that equal to 200
+
+```{r while-indefinite loop, echo=T}
+My_number <- 0 #stating with zero
+flag <- 1
+while(My_number<=200){
+##generating a random number between 1,10
+rand_number <- sample(1:10,1,replace = T)
+##adding the random sampled number to my number 
+My_number <- My_number+rand_number 
+flag <- flag + 1
+}
+print(flag)
+
+```
+
+
+## Function 
+
+Sometime you have to perform same series of calculation with all the time
+ If you have to create pass or grade table every year or for many classes. In these cases it is helpful to write your own function. Let us check if the student have passed or not. 
+ 
+```{r function, echo=T}
+grade_of_student<-function(marks){
+  final_results <- rep(NA,nrow(marks))
+for(i in 1:nrow(marks)){
+  if(marks$math.score[i]>=40 & 
+     marks$reading.score[i]>=40 & 
+     marks$writing.score[i]>=40){
+    average_percent<- sum(marks[i,6:8])/3
+    if(average_percent>=45){
+      final_results[i]=round(average_percent,2)
+    }else{
+      final_results[i]="Fail"
+    }
+  }else{
+    final_results[i]="Fail"
+  }
+}
+  return(final_results)
+}
+Student_performance$grade_fun <- grade_of_student(Student_performance)
+```
+
+
+## frequent used command in R
+
+1. length() : length() of the vector or list. 
+
+```{r length, echo=T}
+x <- 1:50
+length(x)
+```
+
+2. subset() : subset the data frame as per condition. 
+
+```{r subset, echo=T}
+fail_students <- subset(Student_performance,Student_performance$final_result=="Fail")
+head(fail_students)
+```
+
+3. which() : Give the TRUE indices of a logical object, allowing for array indices.
+
+```{r which, echo=T}
+pass_index <- which(Student_performance$final_result!="Fail") 
+
+pass_student <-  Student_performance[pass_index,]
+head(pass_student,10)
+```
+
+4. sort() : sorting the vector
+
+5. apply() : apply function. There are many type of apply functions. Some example are *sapply() and tapply*
+
+```{r apply,echo=TRUE}
+sapply(Student_performance[,6:8], mean) ## mean of each subject
+tapply(Student_performance$math.score, Student_performance$gender, mean) ## mean base on unique #value of gender
+````
+

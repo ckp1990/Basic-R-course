@@ -1782,21 +1782,24 @@ student based on score.</p>
 <p>Lets check this example with the case study</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1ZGVudF9wZXJmb3JtYW5jZSA8LSByZWFkLmNzdihcIlN0dWRlbnRzUGVyZm9ybWFuY2UuY3N2XCIsaGVhZGVyID0gVClcbiMjIFRoZSBkYXRhIHNldCBjb250YWluIHJlc3VsdCBvZiAxMDAwIHN0dWRlbnRzXG4jIyBsZXQgdXMgc2VlIHNvbWUgYmFzaWMgYXR0cmlidXRlIG9mIHRoaXMgZGF0YSBmcmFtZVxuaGVhZChTdHVkZW50X3BlcmZvcm1hbmNlLG4gPSAxMCkgIyMgZmlyc3QgMTAgcm93c1xudGFpbChTdHVkZW50X3BlcmZvcm1hbmNlLG49MTApICMjbGFzdCAxMCByb3dzXG5gYGAifQ== -->
-<pre class="r"><code>Student_performance &lt;- read.csv(&quot;StudentsPerformance.csv&quot;,header = T)
-## The data set contain result of 1000 students
-## let us see some basic attribute of this data frame
-head(Student_performance,n = 10) ## first 10 rows
-tail(Student_performance,n=10) ##last 10 rows</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZXMoU3R1ZGVudF9wZXJmb3JtYW5jZSlcblxuYGBgIn0= -->
+<pre class="r"><code>names(Student_performance)
+</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiZ2VuZGVyXCIgICAgICAgICAgICAgICAgICAgICAgXCJyYWNlLmV0aG5pY2l0eVwiICAgICAgICAgICAgIFxuWzNdIFwicGFyZW50YWwubGV2ZWwub2YuZWR1Y2F0aW9uXCIgXCJsdW5jaFwiICAgICAgICAgICAgICAgICAgICAgIFxuWzVdIFwidGVzdC5wcmVwYXJhdGlvbi5jb3Vyc2VcIiAgICAgXCJtYXRoLnNjb3JlXCIgICAgICAgICAgICAgICAgIFxuWzddIFwicmVhZGluZy5zY29yZVwiICAgICAgICAgICAgICAgXCJ3cml0aW5nLnNjb3JlXCIgICAgICAgICAgICAgIFxuIn0= -->
+<pre><code>[1] &quot;gender&quot;                      &quot;race.ethnicity&quot;             
+[3] &quot;parental.level.of.education&quot; &quot;lunch&quot;                      
+[5] &quot;test.preparation.course&quot;     &quot;math.score&quot;                 
+[7] &quot;reading.score&quot;               &quot;writing.score&quot;              </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <div id="if-statement-in-r" class="section level4">
 <h4>If statement in R</h4>
 <p>Now as you can see from the above output that some student have
 completed the preparation course while other have not. In order to check
-if the student have completed the test prepration we will use if
-statement</p>
+if the student have completed the test preparation we will use if
+statement #if(conditon){function/command}</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaWYoU3R1ZGVudF9wZXJmb3JtYW5jZSR0ZXN0LnByZXBhcmF0aW9uLmNvdXJzZVsxXT09XCJjb21wbGV0ZWRcIil7XG4gIHByaW50KFwiSSBjYW1lIHJlYWR5IHRvIHRha2UgdGhlIHRlc3RcIilcbn0gIyMgbm90ZSB0aGVyZSBpcyBubyBvdXRwdXQgaGVyZSBiZWNhdXNlIHRoZSBmaXJzdCBzdHVkZW50IGhhdmUgbm90IGNvbXBldGVkIHRoaXMuIGNoZWNrIHRoZSAjdGFibGUgYWJvdmVcbmlmKFN0dWRlbnRfcGVyZm9ybWFuY2UkdGVzdC5wcmVwYXJhdGlvbi5jb3Vyc2VbMl09PVwiY29tcGxldGVkXCIpe1xuICBwcmludChcIkkgY2FtZSByZWFkeSB0byB0YWtlIHRoZSB0ZXN0XCIpXG59ICMjIG5vdyB5b3Ugd2lsbCBzZWUgdGhlIG91dHB1dCBhcyBzZWNvbmQgc3R1ZGVudCBoYXZlIGNvbXBsZXRlZCBpdC4gXG5gYGAifQ== -->
@@ -1814,7 +1817,8 @@ the statement inside the parenthesis is true. However, in case where the
 statement is false not output was generate. Now if we want to generate
 the output in the case were statement is true or false then we have to
 used if-else statement.</p>
-<p>Explaining with the same examples.</p>
+<p>Explaining with the same examples.
+#if(condition){command/function}else{command}</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaWYoU3R1ZGVudF9wZXJmb3JtYW5jZSR0ZXN0LnByZXBhcmF0aW9uLmNvdXJzZVsxXT09XCJjb21wbGV0ZWRcIil7XG4gIHByaW50KFwiSSBjYW1lIHJlYWR5IHRvIHRha2UgdGhlIHRlc3RcIilcbn1lbHNle1xuICBwcmludChcIlRoYXRzIG5vdCBmYXJlIEkgd2FzIG5vdCByZWFkeVwiKVxufVxuXG5pZihTdHVkZW50X3BlcmZvcm1hbmNlJHRlc3QucHJlcGFyYXRpb24uY291cnNlWzJdPT1cImNvbXBsZXRlZFwiKXtcbiAgcHJpbnQoXCJJIGNhbWUgcmVhZHkgdG8gdGFrZSB0aGUgdGVzdFwiKVxufSBlbHNle1xuICBwcmludChcIlRoYXRzIG5vdCBmYXJlIEkgd2FzIG5vdCByZWFkeVwiKVxufVxuYGBgIn0= -->
@@ -1838,7 +1842,52 @@ example while grading. Let us assume that score between 80-100 get A,
 <p>Lets code for this.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBmb3Igc3R1ZGVudCBudW1iZXIgM1xuaWYoU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzNdPDQwKXtcbiAgcHJpbnQoXCJZb3UgZmFpbGVkLCBiZXR0ZXIgbHVjayBmb3IgbmV4dCBleGFtXCIpXG59IGVsc2UgaWYgKFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVszXTw9NTkgJiBTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbM10+PTQwKXtcbiAgcHJpbnQoXCJZb3VyIGdyYWRlIGlzIEM7IG5lZWQgdG8gaW1wcm92ZVwiKVxufSBlbHNlIGlmIChTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbM108PTc5ICYgU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzNdPj02MCl7XG4gIHByaW50KFwieW91ciBncmFkZSBpcyBCOyBhbG1vc3QgdGhlcmUsIGtlZXAgdHJ5aW5nXCIpXG59IGVsc2V7XG4gIHByaW50KFwiWW91ciBncmFkZSBpcyBBOyBncmVhdCBqb2JcIilcbn1cblxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2ZvciBzdHVkZW50IDhcbmlmKFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVs4XTw0MCl7XG4gIHByaW50KFwiWW91IGZhaWxlZCwgYmV0dGVyIGx1Y2sgZm9yIG5leHQgZXhhbVwiKVxufSBlbHNlIGlmIChTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbOF08PTU5ICYgU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzhdPj00MCl7XG4gIHByaW50KFwiWW91ciBncmFkZSBpcyBDOyBuZWVkIHRvIGltcHJvdmVcIilcbn0gZWxzZSBpZiAoU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzhdPD03OSAmIFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVs4XT49NjApe1xuICBwcmludChcInlvdXIgZ3JhZGUgaXMgQjsgYWxtb3N0IHRoZXJlLCBrZWVwIHRyeWluZ1wiKVxufSBlbHNle1xuICBwcmludChcIllvdXIgZ3JhZGUgaXMgQTsgZ3JlYXQgam9iXCIpXG59XG5gYGAifQ== -->
+<pre class="r"><code>#for student 8
+if(Student_performance$writing.score[8]&lt;40){
+  print(&quot;You failed, better luck for next exam&quot;)
+} else if (Student_performance$writing.score[8]&lt;=59 &amp; Student_performance$writing.score[8]&gt;=40){
+  print(&quot;Your grade is C; need to improve&quot;)
+} else if (Student_performance$writing.score[8]&lt;=79 &amp; Student_performance$writing.score[8]&gt;=60){
+  print(&quot;your grade is B; almost there, keep trying&quot;)
+} else{
+  print(&quot;Your grade is A; great job&quot;)
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiWW91IGZhaWxlZCwgYmV0dGVyIGx1Y2sgZm9yIG5leHQgZXhhbVwiXG4ifQ== -->
+<pre><code>[1] &quot;You failed, better luck for next exam&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBmb3Igc3R1ZGVudCA4MlxuaWYoU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzgyXTw0MCl7XG4gIHByaW50KFwiWW91IGZhaWxlZCwgYmV0dGVyIGx1Y2sgZm9yIG5leHQgZXhhbVwiKVxufSBlbHNlIGlmIChTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbODJdPD01OSAmIFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVs4Ml0+PTQwKXtcbiAgcHJpbnQoXCJZb3VyIGdyYWRlIGlzIEM7IG5lZWQgdG8gaW1wcm92ZVwiKVxufSBlbHNlIGlmIChTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbODJdPD03OSAmIFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVs4Ml0+PTYwKXtcbiAgcHJpbnQoXCJ5b3VyIGdyYWRlIGlzIEI7IGFsbW9zdCB0aGVyZSwga2VlcCB0cnlpbmdcIilcbn0gZWxzZXtcbiAgcHJpbnQoXCJZb3VyIGdyYWRlIGlzIEE7IGdyZWF0IGpvYlwiKVxufVxuYGBgIn0= -->
+<pre class="r"><code># for student 82
+if(Student_performance$writing.score[82]&lt;40){
+  print(&quot;You failed, better luck for next exam&quot;)
+} else if (Student_performance$writing.score[82]&lt;=59 &amp; Student_performance$writing.score[82]&gt;=40){
+  print(&quot;Your grade is C; need to improve&quot;)
+} else if (Student_performance$writing.score[82]&lt;=79 &amp; Student_performance$writing.score[82]&gt;=60){
+  print(&quot;your grade is B; almost there, keep trying&quot;)
+} else{
+  print(&quot;Your grade is A; great job&quot;)
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiWW91ciBncmFkZSBpcyBDOyBuZWVkIHRvIGltcHJvdmVcIlxuIn0= -->
+<pre><code>[1] &quot;Your grade is C; need to improve&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2ZvciBzdHVkZW50IDI5XG5pZihTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbMjldPDQwKXtcbiAgcHJpbnQoXCJZb3UgZmFpbGVkLCBiZXR0ZXIgbHVjayBmb3IgbmV4dCBleGFtXCIpXG59IGVsc2UgaWYgKFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVsyOV08PTU5ICYgU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzI5XT49NDApe1xuICBwcmludChcIllvdXIgZ3JhZGUgaXMgQzsgbmVlZCB0byBpbXByb3ZlXCIpXG59IGVsc2UgaWYgKFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVsyOV08PTc5ICYgU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzI5XT49NjApe1xuICBwcmludChcInlvdXIgZ3JhZGUgaXMgQjsgYWxtb3N0IHRoZXJlLCBrZWVwIHRyeWluZ1wiKVxufSBlbHNle1xuICBwcmludChcIllvdXIgZ3JhZGUgaXMgQTsgZ3JlYXQgam9iXCIpXG59XG5gYGAifQ== -->
+<pre class="r"><code>#for student 29
+if(Student_performance$writing.score[29]&lt;40){
+  print(&quot;You failed, better luck for next exam&quot;)
+} else if (Student_performance$writing.score[29]&lt;=59 &amp; Student_performance$writing.score[29]&gt;=40){
+  print(&quot;Your grade is C; need to improve&quot;)
+} else if (Student_performance$writing.score[29]&lt;=79 &amp; Student_performance$writing.score[29]&gt;=60){
+  print(&quot;your grade is B; almost there, keep trying&quot;)
+} else{
+  print(&quot;Your grade is A; great job&quot;)
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwieW91ciBncmFkZSBpcyBCOyBhbG1vc3QgdGhlcmUsIGtlZXAgdHJ5aW5nXCJcbiJ9 -->
+<pre><code>[1] &quot;your grade is B; almost there, keep trying&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBmb3Igc3R1ZGVudCBudW1iZXIgM1xuaWYoU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzNdPDQwKXtcbiAgcHJpbnQoXCJZb3UgZmFpbGVkLCBiZXR0ZXIgbHVjayBmb3IgbmV4dCBleGFtXCIpXG59IGVsc2UgaWYgKFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVszXTw9NTkgJiBTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbM10+PTQwKXtcbiAgcHJpbnQoXCJZb3VyIGdyYWRlIGlzIEM7IG5lZWQgdG8gaW1wcm92ZVwiKVxufSBlbHNlIGlmIChTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbM108PTc5ICYgU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzNdPj02MCl7XG4gIHByaW50KFwieW91ciBncmFkZSBpcyBCOyBhbG1vc3QgdGhlcmUsIGtlZXAgdHJ5aW5nXCIpXG59IGVsc2V7XG4gIHByaW50KFwiWW91ciBncmFkZSBpcyBBOyBncmVhdCBqb2JcIilcbn1cbmBgYCJ9 -->
 <pre class="r"><code># for student number 3
 if(Student_performance$writing.score[3]&lt;40){
   print(&quot;You failed, better luck for next exam&quot;)
@@ -1848,17 +1897,77 @@ if(Student_performance$writing.score[3]&lt;40){
   print(&quot;your grade is B; almost there, keep trying&quot;)
 } else{
   print(&quot;Your grade is A; great job&quot;)
-}
-</code></pre>
+}</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiWW91ciBncmFkZSBpcyBBOyBncmVhdCBqb2JcIlxuIn0= -->
 <pre><code>[1] &quot;Your grade is A; great job&quot;</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1ZGVudF9wZXJmb3JtYW5jZVtjKDgsODIsMjksMyksXVxuYGBgIn0= -->
+<pre class="r"><code>Student_performance[c(8,82,29,3),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NCwibmNvbCI6OCwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbNCDDlyA4XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJvMVRXMHZETUJUT1pydWJUZ1VmZkJCaGJ4T2tFZkhGVnkvc0J3d0ZFVVJpZXRvRzBtUWttZE0vcjU3V1pHNFZMdzhmT2QrWG5wTno2L1Q2N214d055Q0ViSkNvM1NJYk1ab2t2cjJaSk9jRUZTUXRFcEYrZGI3Z1IzdG85QkM3aU1oZlJDV1Q4SWZkeWFCbTY1N2QzT2o1YkhUNUs3MXEzcTdIMkxLNmhCSFhVa0llWHRzc1JGNk1MQyswbGo5TE95V3pEc3pZamxMSURUU1QyOHBRT3pHUXpqbWt2Mmc5NjVoS21mbk9HMjFTV3NHL2JFS0d0UjhoUjRoVHhBUnh2NklmSXhLdlA2N29ZNjlmSUI0YTg0c1ZLOEg2cEhwaExqbW9GSXhuMjRaeG9PQUtKYmh3cjE0OW1ERUR5akZKSlR5RHBEcWpWUU9ZRTFxRjJIS3VlT0hKdmdQcjZNd0ErdFVmVWE3bnhvWWFCeVZ6QmJWY202QU1EYkJVcUh4ZFhCamh2c1QxV3ZwR0wyaW9KeFJmN2VVVWNWaHZjNk40THBrTnhRZHhrRExIYUdZd0RySzNoa3RYejZyazBhbGRiWDJuNGR3eXpXZ2lTMEJhU0VSV3Nmcm1FNnYyMEovUml0MzdmTG45N2lOMnduQkE1V0s1RzdGa1R4QjJOd0xjNU9YVTlLTHVCZlpjS0JmU1FkVlNwM0Z1UWNHZkpDaDF1ZVR0QStFOGdxTC9Bd0FBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["gender"],"name":[1],"type":["chr"],"align":["left"]},{"label":["race.ethnicity"],"name":[2],"type":["chr"],"align":["left"]},{"label":["parental.level.of.education"],"name":[3],"type":["chr"],"align":["left"]},{"label":["lunch"],"name":[4],"type":["chr"],"align":["left"]},{"label":["test.preparation.course"],"name":[5],"type":["chr"],"align":["left"]},{"label":["math.score"],"name":[6],"type":["int"],"align":["right"]},{"label":["reading.score"],"name":[7],"type":["int"],"align":["right"]},{"label":["writing.score"],"name":[8],"type":["int"],"align":["right"]}],"data":[{"1":"male","2":"group B","3":"some college","4":"free/reduced","5":"none","6":"40","7":"43","8":"39","_rn_":"8"},{"1":"male","2":"group B","3":"high school","4":"free/reduced","5":"none","6":"49","7":"45","8":"45","_rn_":"82"},{"1":"male","2":"group C","3":"high school","4":"standard","5":"none","6":"70","7":"70","8":"65","_rn_":"29"},{"1":"female","2":"group B","3":"master's degree","4":"standard","5":"none","6":"90","7":"95","8":"93","_rn_":"3"}],"options":{"columns":{"min":{},"max":[10],"total":[8]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
+  </script>
 </div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Some time it is within a if statement there is another if else
+statement. Such scenarios is called nested is else statement. For
+example let us assume that passing mark for ethnic group B is 35 while
+group A,c and D is 41. Let understand this example by code.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMgZm9yIHN0dWRlbnQgbnVtYmVyIDggaW4gbWF0aHNcbmlmKFN0dWRlbnRfcGVyZm9ybWFuY2UkcmFjZS5ldGhuaWNpdHlbMTE2XT09XCJncm91cCBCXCIpe1xuICBpZihTdHVkZW50X3BlcmZvcm1hbmNlJG1hdGguc2NvcmVbMTE2XT49MzUpe1xuICAgIHByaW50KFwiWW91IGFyZSBncm91cCBCIGFuZCBQYXNzXCIpXG4gIH0gZWxzZSB7IHByaW50KFwiRmFpbFwiKVxuICAgIH1cbn1lbHNlIHtcbiAgaWYoU3R1ZGVudF9wZXJmb3JtYW5jZSRtYXRoLnNjb3JlWzExNl0+NDApe1xuICAgIHByaW50KFwiWW91IGFyZSBub3QgZnJvbSBncm91cCBCIGFuZCBQYXNzXCIpXG4gIH0gZWxzZSB7cHJpbnQoXCJGYWlsXCIpXG4gICAgfVxufVxuXG5gYGAifQ== -->
+<pre class="r"><code>## for student number 8 in maths
+if(Student_performance$race.ethnicity[116]==&quot;group B&quot;){
+  if(Student_performance$math.score[116]&gt;=35){
+    print(&quot;You are group B and Pass&quot;)
+  } else { print(&quot;Fail&quot;)
+    }
+}else {
+  if(Student_performance$math.score[116]&gt;40){
+    print(&quot;You are not from group B and Pass&quot;)
+  } else {print(&quot;Fail&quot;)
+    }
+}
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiWW91IGFyZSBub3QgZnJvbSBncm91cCBCIGFuZCBQYXNzXCJcbiJ9 -->
+<pre><code>[1] &quot;You are not from group B and Pass&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="looping-the-command" class="section level3">
+<h3>Looping the command</h3>
+<p>You can clearly see from the about we have to all the position of the
+element in the vector to check our condition each time. It is a
+repetitive process. so we can run the same command in the loop.</p>
+</div>
+<div id="for-loop-or-definte-loop" class="section level2">
+<h2>For loop or definte loop</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="for-example-2" class="section level2">
+<h2>For example 2</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="while-loop-or-indefente-loop" class="section level2">
+<h2>while loop or indefente loop</h2>
+<!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkRheSAzIFIgYmFzaWMgd29ya2Jvb2siDQpvdXRwdXQ6DQogIHBkZl9kb2N1bWVudDogZGVmYXVsdA0KYXV0aG9yOiAiQ2hhbmRhbiBLdW1hciBQYW5kZXkiDQpkYXRlOiAwNy0xMC0yMDIyICANCi0tLQ0KDQpJbiB0b2RheSdzIHdlIHdpbGwgZGlzY3VzcyB0aGUgY29uZGl0aW9uYWwgc3RhdGVtZW50cy4gW2V4OiBpZiAtZWxzZV0sbG9vcHMsYW5kIGZ1bmN0aW9ucyBbbG9jYWxdIGluIFINCg0KIyMjIENvbmRpdGlvbmFsIHN0YXRlbWVudHMNCkNvbmRpdGlvbmFsIHN0YXRlbWVudHMgb3IgZXhwcmVzc2lvbiBpbiBhbnkgY29tcHV0ZXIgbGFuZ3VhZ2Ugd2lsbCBoZWxwIGluIG1ha2luZyBkZWNpc2lvbi4gRm9yIGV4YW1wbGUgaWYgd2UgbmVlZCB0byBjaGVjayBpZiB0aGUgc3R1ZGVudCBoYXZlIHBhc3NlZCBvciBmYWlsLiBFdmVuIG1vcmUsIGlmIHdlIGFyZSBkZWNpZGluZyBvbiB0aGUgZ3JhZGUgb2YgdGhlIHN0dWRlbnQgYmFzZWQgb24gc2NvcmUuIA0KDQpMZXRzIGNoZWNrIHRoaXMgZXhhbXBsZSB3aXRoIHRoZSBjYXNlIHN0dWR5DQoNCmBgYHtyIHN0dWRlbnQgZGF0YSwgd2FybmluZz1GLGVjaG89VH0NClN0dWRlbnRfcGVyZm9ybWFuY2UgPC0gcmVhZC5jc3YoIlN0dWRlbnRzUGVyZm9ybWFuY2UuY3N2IixoZWFkZXIgPSBUKQ0KIyMgVGhlIGRhdGEgc2V0IGNvbnRhaW4gcmVzdWx0IG9mIDEwMDAgc3R1ZGVudHMNCiMjIGxldCB1cyBzZWUgc29tZSBiYXNpYyBhdHRyaWJ1dGUgb2YgdGhpcyBkYXRhIGZyYW1lDQpoZWFkKFN0dWRlbnRfcGVyZm9ybWFuY2UsbiA9IDEwKSAjIyBmaXJzdCAxMCByb3dzDQp0YWlsKFN0dWRlbnRfcGVyZm9ybWFuY2Usbj0xMCkgIyNsYXN0IDEwIHJvd3MNCmBgYA0KDQojIyMjIElmIHN0YXRlbWVudCBpbiBSDQoNCk5vdyBhcyB5b3UgY2FuIHNlZSBmcm9tIHRoZSBhYm92ZSBvdXRwdXQgdGhhdCBzb21lIHN0dWRlbnQgaGF2ZSBjb21wbGV0ZWQgdGhlIHByZXBhcmF0aW9uIGNvdXJzZSB3aGlsZSBvdGhlciBoYXZlIG5vdC4gSW4gb3JkZXIgdG8gY2hlY2sgaWYgdGhlIHN0dWRlbnQgaGF2ZSBjb21wbGV0ZWQgdGhlIHRlc3QgcHJlcHJhdGlvbiB3ZSB3aWxsIHVzZSBpZiBzdGF0ZW1lbnQNCg0KYGBge3IgaWYgc3RhdGVtZW50LCBlY2hvPVR9DQppZihTdHVkZW50X3BlcmZvcm1hbmNlJHRlc3QucHJlcGFyYXRpb24uY291cnNlWzFdPT0iY29tcGxldGVkIil7DQogIHByaW50KCJJIGNhbWUgcmVhZHkgdG8gdGFrZSB0aGUgdGVzdCIpDQp9ICMjIG5vdGUgdGhlcmUgaXMgbm8gb3V0cHV0IGhlcmUgYmVjYXVzZSB0aGUgZmlyc3Qgc3R1ZGVudCBoYXZlIG5vdCBjb21wZXRlZCB0aGlzLiBjaGVjayB0aGUgI3RhYmxlIGFib3ZlDQppZihTdHVkZW50X3BlcmZvcm1hbmNlJHRlc3QucHJlcGFyYXRpb24uY291cnNlWzJdPT0iY29tcGxldGVkIil7DQogIHByaW50KCJJIGNhbWUgcmVhZHkgdG8gdGFrZSB0aGUgdGVzdCIpDQp9ICMjIG5vdyB5b3Ugd2lsbCBzZWUgdGhlIG91dHB1dCBhcyBzZWNvbmQgc3R1ZGVudCBoYXZlIGNvbXBsZXRlZCBpdC4gDQpgYGANCg0KTm93LCB1c2luZyBpZiBzdGF0ZW1lbnQgd2lsbCBvbmx5IGV4ZWN1dGUgdGhlIGNvbW1hbmQgaWYgYW5kIG9ubHkgaWYgdGhlIHN0YXRlbWVudCBpbnNpZGUgdGhlIHBhcmVudGhlc2lzIGlzIHRydWUuIEhvd2V2ZXIsIGluIGNhc2Ugd2hlcmUgdGhlIHN0YXRlbWVudCBpcyBmYWxzZSBub3Qgb3V0cHV0IHdhcyBnZW5lcmF0ZS4gTm93IGlmIHdlIHdhbnQgdG8gZ2VuZXJhdGUgdGhlIG91dHB1dCBpbiB0aGUgY2FzZSB3ZXJlIHN0YXRlbWVudCBpcyB0cnVlIG9yIGZhbHNlIHRoZW4gd2UgaGF2ZSB0byB1c2VkIGlmLWVsc2Ugc3RhdGVtZW50Lg0KDQpFeHBsYWluaW5nIHdpdGggdGhlIHNhbWUgZXhhbXBsZXMuIA0KDQpgYGB7ciBpZmVsc2Ugc3RhdGVtZW50LCBlY2hvPVR9DQppZihTdHVkZW50X3BlcmZvcm1hbmNlJHRlc3QucHJlcGFyYXRpb24uY291cnNlWzFdPT0iY29tcGxldGVkIil7DQogIHByaW50KCJJIGNhbWUgcmVhZHkgdG8gdGFrZSB0aGUgdGVzdCIpDQp9ZWxzZXsNCiAgcHJpbnQoIlRoYXRzIG5vdCBmYXJlIEkgd2FzIG5vdCByZWFkeSIpDQp9DQoNCmlmKFN0dWRlbnRfcGVyZm9ybWFuY2UkdGVzdC5wcmVwYXJhdGlvbi5jb3Vyc2VbMl09PSJjb21wbGV0ZWQiKXsNCiAgcHJpbnQoIkkgY2FtZSByZWFkeSB0byB0YWtlIHRoZSB0ZXN0IikNCn0gZWxzZXsNCiAgcHJpbnQoIlRoYXRzIG5vdCBmYXJlIEkgd2FzIG5vdCByZWFkeSIpDQp9DQpgYGANCg0KSW4gbWFueSBvY2Nhc2lvbnMsIHdlIG5lZWQgdG8gdGFrZSBtdWx0aXBsZSBsZXZlbHMgb2YgZGVjaXNpb24uIEZvciBleGFtcGxlIHdoaWxlIGdyYWRpbmcuIExldCB1cyBhc3N1bWUgdGhhdCBzY29yZSBiZXR3ZWVuIDgwLTEwMCBnZXQgQSwgNjAtNzkgZ2V0IEIgYW5kIDQwLTU5IGdldCBDIGFuZCBiZWxvdyA0MCBnZXQgRg0KDQpMZXRzIGNvZGUgZm9yIHRoaXMuIA0KDQpgYGB7ciBpZi1lbHNlLWlmLGVjaG89VH0NCiNmb3Igc3R1ZGVudCA4DQppZihTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbOF08NDApew0KICBwcmludCgiWW91IGZhaWxlZCwgYmV0dGVyIGx1Y2sgZm9yIG5leHQgZXhhbSIpDQp9IGVsc2UgaWYgKFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVs4XTw9NTkgJiBTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbOF0+PTQwKXsNCiAgcHJpbnQoIllvdXIgZ3JhZGUgaXMgQzsgbmVlZCB0byBpbXByb3ZlIikNCn0gZWxzZSBpZiAoU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzhdPD03OSAmIFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVs4XT49NjApew0KICBwcmludCgieW91ciBncmFkZSBpcyBCOyBhbG1vc3QgdGhlcmUsIGtlZXAgdHJ5aW5nIikNCn0gZWxzZXsNCiAgcHJpbnQoIllvdXIgZ3JhZGUgaXMgQTsgZ3JlYXQgam9iIikNCn0NCiMgZm9yIHN0dWRlbnQgODINCmlmKFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVs4Ml08NDApew0KICBwcmludCgiWW91IGZhaWxlZCwgYmV0dGVyIGx1Y2sgZm9yIG5leHQgZXhhbSIpDQp9IGVsc2UgaWYgKFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVs4Ml08PTU5ICYgU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzgyXT49NDApew0KICBwcmludCgiWW91ciBncmFkZSBpcyBDOyBuZWVkIHRvIGltcHJvdmUiKQ0KfSBlbHNlIGlmIChTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbODJdPD03OSAmIFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVs4Ml0+PTYwKXsNCiAgcHJpbnQoInlvdXIgZ3JhZGUgaXMgQjsgYWxtb3N0IHRoZXJlLCBrZWVwIHRyeWluZyIpDQp9IGVsc2V7DQogIHByaW50KCJZb3VyIGdyYWRlIGlzIEE7IGdyZWF0IGpvYiIpDQp9DQojZm9yIHN0dWRlbnQgMjkNCmlmKFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVsyOV08NDApew0KICBwcmludCgiWW91IGZhaWxlZCwgYmV0dGVyIGx1Y2sgZm9yIG5leHQgZXhhbSIpDQp9IGVsc2UgaWYgKFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVsyOV08PTU5ICYgU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzI5XT49NDApew0KICBwcmludCgiWW91ciBncmFkZSBpcyBDOyBuZWVkIHRvIGltcHJvdmUiKQ0KfSBlbHNlIGlmIChTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbMjldPD03OSAmIFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVsyOV0+PTYwKXsNCiAgcHJpbnQoInlvdXIgZ3JhZGUgaXMgQjsgYWxtb3N0IHRoZXJlLCBrZWVwIHRyeWluZyIpDQp9IGVsc2V7DQogIHByaW50KCJZb3VyIGdyYWRlIGlzIEE7IGdyZWF0IGpvYiIpDQp9DQojIGZvciBzdHVkZW50IG51bWJlciAzDQppZihTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbM108NDApew0KICBwcmludCgiWW91IGZhaWxlZCwgYmV0dGVyIGx1Y2sgZm9yIG5leHQgZXhhbSIpDQp9IGVsc2UgaWYgKFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVszXTw9NTkgJiBTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbM10+PTQwKXsNCiAgcHJpbnQoIllvdXIgZ3JhZGUgaXMgQzsgbmVlZCB0byBpbXByb3ZlIikNCn0gZWxzZSBpZiAoU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzNdPD03OSAmIFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVszXT49NjApew0KICBwcmludCgieW91ciBncmFkZSBpcyBCOyBhbG1vc3QgdGhlcmUsIGtlZXAgdHJ5aW5nIikNCn0gZWxzZXsNCiAgcHJpbnQoIllvdXIgZ3JhZGUgaXMgQTsgZ3JlYXQgam9iIikNCn0NCmBgYA==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkRheSAzIFIgYmFzaWMgd29ya2Jvb2siDQpvdXRwdXQ6DQogIHBkZl9kb2N1bWVudDogZGVmYXVsdA0KYXV0aG9yOiAiQ2hhbmRhbiBLdW1hciBQYW5kZXkiDQpkYXRlOiAwNy0xMC0yMDIyICANCi0tLQ0KDQpJbiB0b2RheSdzIHdlIHdpbGwgZGlzY3VzcyB0aGUgY29uZGl0aW9uYWwgc3RhdGVtZW50cy4gW2V4OiBpZiAtZWxzZV0sbG9vcHMsYW5kIGZ1bmN0aW9ucyBbbG9jYWxdIGluIFINCg0KIyMjIENvbmRpdGlvbmFsIHN0YXRlbWVudHMNCkNvbmRpdGlvbmFsIHN0YXRlbWVudHMgb3IgZXhwcmVzc2lvbiBpbiBhbnkgY29tcHV0ZXIgbGFuZ3VhZ2Ugd2lsbCBoZWxwIGluIG1ha2luZyBkZWNpc2lvbi4gRm9yIGV4YW1wbGUgaWYgd2UgbmVlZCB0byBjaGVjayBpZiB0aGUgc3R1ZGVudCBoYXZlIHBhc3NlZCBvciBmYWlsLiBFdmVuIG1vcmUsIGlmIHdlIGFyZSBkZWNpZGluZyBvbiB0aGUgZ3JhZGUgb2YgdGhlIHN0dWRlbnQgYmFzZWQgb24gc2NvcmUuIA0KDQpMZXRzIGNoZWNrIHRoaXMgZXhhbXBsZSB3aXRoIHRoZSBjYXNlIHN0dWR5DQoNCmBgYHtyIHN0dWRlbnQgZGF0YSwgd2FybmluZz1GLGVjaG89VH0NClN0dWRlbnRfcGVyZm9ybWFuY2UgPC0gcmVhZC5jc3YoIlN0dWRlbnRzUGVyZm9ybWFuY2UuY3N2IixoZWFkZXIgPSBUKQ0KIyMgVGhlIGRhdGEgc2V0IGNvbnRhaW4gcmVzdWx0IG9mIDEwMDAgc3R1ZGVudHMNCiMjIGxldCB1cyBzZWUgc29tZSBiYXNpYyBhdHRyaWJ1dGUgb2YgdGhpcyBkYXRhIGZyYW1lDQpoZWFkKFN0dWRlbnRfcGVyZm9ybWFuY2UsbiA9IDEwKSAjIyBmaXJzdCAxMCByb3dzDQp0YWlsKFN0dWRlbnRfcGVyZm9ybWFuY2Usbj0xMCkgIyNsYXN0IDEwIHJvd3MNCnN0cihTdHVkZW50X3BlcmZvcm1hbmNlKSAjI3N0cnVjdHVyZSBvZiB5b3VyIGRhdGFzZXQNCiMjc3VtbWFyeSBvZiBteSBkYXRhIGZyYW1lDQpzdW1tYXJ5KFN0dWRlbnRfcGVyZm9ybWFuY2UpDQojI25hbWUgb2YgdGhlIGNvbA0KbmFtZXMoU3R1ZGVudF9wZXJmb3JtYW5jZSkNCiMjaW4gb3JkZXIgYWNjZXNzIGFuIGVsZW1lbnQgb3IgY29sIG9mIGRhdGEgZnJhbWUgDQpTdHVkZW50X3BlcmZvcm1hbmNlJGdlbmRlcg0KYGBgDQoNCiMjIyMgSWYgc3RhdGVtZW50IGluIFINCg0KTm93IGFzIHlvdSBjYW4gc2VlIGZyb20gdGhlIGFib3ZlIG91dHB1dCB0aGF0IHNvbWUgc3R1ZGVudCBoYXZlIGNvbXBsZXRlZCB0aGUgcHJlcGFyYXRpb24gY291cnNlIHdoaWxlIG90aGVyIGhhdmUgbm90LiBJbiBvcmRlciB0byBjaGVjayBpZiB0aGUgc3R1ZGVudCBoYXZlIGNvbXBsZXRlZCB0aGUgdGVzdCBwcmVwYXJhdGlvbiB3ZSB3aWxsIHVzZSBpZiBzdGF0ZW1lbnQNCiNpZihjb25kaXRvbil7ZnVuY3Rpb24vY29tbWFuZH0NCmBgYHtyIGlmIHN0YXRlbWVudCwgZWNobz1UfQ0KaWYoU3R1ZGVudF9wZXJmb3JtYW5jZSR0ZXN0LnByZXBhcmF0aW9uLmNvdXJzZVsxXT09ImNvbXBsZXRlZCIpew0KICBwcmludCgiSSBjYW1lIHJlYWR5IHRvIHRha2UgdGhlIHRlc3QiKQ0KfSAjIyBub3RlIHRoZXJlIGlzIG5vIG91dHB1dCBoZXJlIGJlY2F1c2UgdGhlIGZpcnN0IHN0dWRlbnQgaGF2ZSBub3QgY29tcGV0ZWQgdGhpcy4gY2hlY2sgdGhlICN0YWJsZSBhYm92ZQ0KaWYoU3R1ZGVudF9wZXJmb3JtYW5jZSR0ZXN0LnByZXBhcmF0aW9uLmNvdXJzZVsyXT09ImNvbXBsZXRlZCIpew0KICBwcmludCgiSSBjYW1lIHJlYWR5IHRvIHRha2UgdGhlIHRlc3QiKQ0KfSAjIyBub3cgeW91IHdpbGwgc2VlIHRoZSBvdXRwdXQgYXMgc2Vjb25kIHN0dWRlbnQgaGF2ZSBjb21wbGV0ZWQgaXQuIA0KYGBgDQoNCk5vdywgdXNpbmcgaWYgc3RhdGVtZW50IHdpbGwgb25seSBleGVjdXRlIHRoZSBjb21tYW5kIGlmIGFuZCBvbmx5IGlmIHRoZSBzdGF0ZW1lbnQgaW5zaWRlIHRoZSBwYXJlbnRoZXNpcyBpcyB0cnVlLiBIb3dldmVyLCBpbiBjYXNlIHdoZXJlIHRoZSBzdGF0ZW1lbnQgaXMgZmFsc2Ugbm90IG91dHB1dCB3YXMgZ2VuZXJhdGUuIE5vdyBpZiB3ZSB3YW50IHRvIGdlbmVyYXRlIHRoZSBvdXRwdXQgaW4gdGhlIGNhc2Ugd2VyZSBzdGF0ZW1lbnQgaXMgdHJ1ZSBvciBmYWxzZSB0aGVuIHdlIGhhdmUgdG8gdXNlZCBpZi1lbHNlIHN0YXRlbWVudC4NCg0KRXhwbGFpbmluZyB3aXRoIHRoZSBzYW1lIGV4YW1wbGVzLiANCiNpZihjb25kaXRpb24pe2NvbW1hbmQvZnVuY3Rpb259ZWxzZXtjb21tYW5kfQ0KYGBge3IgaWZlbHNlIHN0YXRlbWVudCwgZWNobz1UfQ0KaWYoU3R1ZGVudF9wZXJmb3JtYW5jZSR0ZXN0LnByZXBhcmF0aW9uLmNvdXJzZVsxXT09ImNvbXBsZXRlZCIpew0KICBwcmludCgiSSBjYW1lIHJlYWR5IHRvIHRha2UgdGhlIHRlc3QiKQ0KfWVsc2V7DQogIHByaW50KCJUaGF0cyBub3QgZmFyZSBJIHdhcyBub3QgcmVhZHkiKQ0KfQ0KDQppZihTdHVkZW50X3BlcmZvcm1hbmNlJHRlc3QucHJlcGFyYXRpb24uY291cnNlWzJdPT0iY29tcGxldGVkIil7DQogIHByaW50KCJJIGNhbWUgcmVhZHkgdG8gdGFrZSB0aGUgdGVzdCIpDQp9IGVsc2V7DQogIHByaW50KCJUaGF0cyBub3QgZmFyZSBJIHdhcyBub3QgcmVhZHkiKQ0KfQ0KYGBgDQoNCkluIG1hbnkgb2NjYXNpb25zLCB3ZSBuZWVkIHRvIHRha2UgbXVsdGlwbGUgbGV2ZWxzIG9mIGRlY2lzaW9uLiBGb3IgZXhhbXBsZSB3aGlsZSBncmFkaW5nLiBMZXQgdXMgYXNzdW1lIHRoYXQgc2NvcmUgYmV0d2VlbiA4MC0xMDAgZ2V0IEEsIDYwLTc5IGdldCBCIGFuZCA0MC01OSBnZXQgQyBhbmQgYmVsb3cgNDAgZ2V0IEYNCg0KTGV0cyBjb2RlIGZvciB0aGlzLiANCg0KYGBge3IgaWYtZWxzZS1pZixlY2hvPVR9DQojZm9yIHN0dWRlbnQgOA0KaWYoU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzhdPDQwKXsNCiAgcHJpbnQoIllvdSBmYWlsZWQsIGJldHRlciBsdWNrIGZvciBuZXh0IGV4YW0iKQ0KfSBlbHNlIGlmIChTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbOF08PTU5ICYgU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzhdPj00MCl7DQogIHByaW50KCJZb3VyIGdyYWRlIGlzIEM7IG5lZWQgdG8gaW1wcm92ZSIpDQp9IGVsc2UgaWYgKFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVs4XTw9NzkgJiBTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbOF0+PTYwKXsNCiAgcHJpbnQoInlvdXIgZ3JhZGUgaXMgQjsgYWxtb3N0IHRoZXJlLCBrZWVwIHRyeWluZyIpDQp9IGVsc2V7DQogIHByaW50KCJZb3VyIGdyYWRlIGlzIEE7IGdyZWF0IGpvYiIpDQp9DQojIGZvciBzdHVkZW50IDgyDQppZihTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbODJdPDQwKXsNCiAgcHJpbnQoIllvdSBmYWlsZWQsIGJldHRlciBsdWNrIGZvciBuZXh0IGV4YW0iKQ0KfSBlbHNlIGlmIChTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbODJdPD01OSAmIFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVs4Ml0+PTQwKXsNCiAgcHJpbnQoIllvdXIgZ3JhZGUgaXMgQzsgbmVlZCB0byBpbXByb3ZlIikNCn0gZWxzZSBpZiAoU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzgyXTw9NzkgJiBTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbODJdPj02MCl7DQogIHByaW50KCJ5b3VyIGdyYWRlIGlzIEI7IGFsbW9zdCB0aGVyZSwga2VlcCB0cnlpbmciKQ0KfSBlbHNlew0KICBwcmludCgiWW91ciBncmFkZSBpcyBBOyBncmVhdCBqb2IiKQ0KfQ0KI2ZvciBzdHVkZW50IDI5DQppZihTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbMjldPDQwKXsNCiAgcHJpbnQoIllvdSBmYWlsZWQsIGJldHRlciBsdWNrIGZvciBuZXh0IGV4YW0iKQ0KfSBlbHNlIGlmIChTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbMjldPD01OSAmIFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVsyOV0+PTQwKXsNCiAgcHJpbnQoIllvdXIgZ3JhZGUgaXMgQzsgbmVlZCB0byBpbXByb3ZlIikNCn0gZWxzZSBpZiAoU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzI5XTw9NzkgJiBTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbMjldPj02MCl7DQogIHByaW50KCJ5b3VyIGdyYWRlIGlzIEI7IGFsbW9zdCB0aGVyZSwga2VlcCB0cnlpbmciKQ0KfSBlbHNlew0KICBwcmludCgiWW91ciBncmFkZSBpcyBBOyBncmVhdCBqb2IiKQ0KfQ0KIyBmb3Igc3R1ZGVudCBudW1iZXIgMw0KaWYoU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzNdPDQwKXsNCiAgcHJpbnQoIllvdSBmYWlsZWQsIGJldHRlciBsdWNrIGZvciBuZXh0IGV4YW0iKQ0KfSBlbHNlIGlmIChTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbM108PTU5ICYgU3R1ZGVudF9wZXJmb3JtYW5jZSR3cml0aW5nLnNjb3JlWzNdPj00MCl7DQogIHByaW50KCJZb3VyIGdyYWRlIGlzIEM7IG5lZWQgdG8gaW1wcm92ZSIpDQp9IGVsc2UgaWYgKFN0dWRlbnRfcGVyZm9ybWFuY2Ukd3JpdGluZy5zY29yZVszXTw9NzkgJiBTdHVkZW50X3BlcmZvcm1hbmNlJHdyaXRpbmcuc2NvcmVbM10+PTYwKXsNCiAgcHJpbnQoInlvdXIgZ3JhZGUgaXMgQjsgYWxtb3N0IHRoZXJlLCBrZWVwIHRyeWluZyIpDQp9IGVsc2V7DQogIHByaW50KCJZb3VyIGdyYWRlIGlzIEE7IGdyZWF0IGpvYiIpDQp9DQpTdHVkZW50X3BlcmZvcm1hbmNlW2MoOCw4MiwyOSwzKSxdDQpgYGANCg0KU29tZSB0aW1lIGl0IGlzIHdpdGhpbiBhIGlmIHN0YXRlbWVudCB0aGVyZSBpcyBhbm90aGVyIGlmIGVsc2Ugc3RhdGVtZW50LiBTdWNoIHNjZW5hcmlvcyBpcyBjYWxsZWQgbmVzdGVkIGlzIGVsc2Ugc3RhdGVtZW50LiBGb3IgZXhhbXBsZSBsZXQgdXMgYXNzdW1lIHRoYXQgcGFzc2luZyBtYXJrIGZvciBldGhuaWMgZ3JvdXAgQiBpcyAzNSB3aGlsZSBncm91cCBBLGMgYW5kIEQgIGlzIDQxLiBMZXQgdW5kZXJzdGFuZCB0aGlzIGV4YW1wbGUgYnkgY29kZS4gDQoNCmBgYHtyIG5lc3RlZGlmZWxzZSwgZWNobz1UfQ0KIyMgZm9yIHN0dWRlbnQgbnVtYmVyIDggaW4gbWF0aHMNCmlmKFN0dWRlbnRfcGVyZm9ybWFuY2UkcmFjZS5ldGhuaWNpdHlbMTE2XT09Imdyb3VwIEIiKXsNCiAgaWYoU3R1ZGVudF9wZXJmb3JtYW5jZSRtYXRoLnNjb3JlWzExNl0+PTM1KXsNCiAgICBwcmludCgiWW91IGFyZSBncm91cCBCIGFuZCBQYXNzIikNCiAgfSBlbHNlIHsgcHJpbnQoIkZhaWwiKQ0KICAgIH0NCn1lbHNlIHsNCiAgaWYoU3R1ZGVudF9wZXJmb3JtYW5jZSRtYXRoLnNjb3JlWzExNl0+NDApew0KICAgIHByaW50KCJZb3UgYXJlIG5vdCBmcm9tIGdyb3VwIEIgYW5kIFBhc3MiKQ0KICB9IGVsc2Uge3ByaW50KCJGYWlsIikNCiAgICB9DQp9DQpgYGANCg0KIyMjIExvb3BpbmcgdGhlIGNvbW1hbmQNCg0KWW91IGNhbiBjbGVhcmx5IHNlZSBmcm9tIHRoZSBhYm91dCB3ZSBoYXZlIHRvIGFsbCB0aGUgcG9zaXRpb24gb2YgdGhlIGVsZW1lbnQgaW4gdGhlIHZlY3RvciB0byBjaGVjayBvdXIgY29uZGl0aW9uIGVhY2ggdGltZS4gSXQgaXMgYSByZXBldGl0aXZlIHByb2Nlc3MuIHNvIHdlIGNhbiBydW4gdGhlIHNhbWUgY29tbWFuZCBpbiB0aGUgbG9vcC4gDQoNCiMjIEZvciBsb29wIG9yIGRlZmludGUgbG9vcA0KDQpgYGB7ciBmb3IgbG9vcCBleGFtcGxlMSwgZWNobz1UfQ0KDQpgYGANCg0KIyMgRm9yIGV4YW1wbGUgMg0KDQpgYGB7ciBmb3IgbG9vcCBleDIsZWNobz1UfQ0KYGBgDQoNCiMjIHdoaWxlIGxvb3Agb3IgaW5kZWZlbnRlIGxvb3ANCg==</div>
 
 
 

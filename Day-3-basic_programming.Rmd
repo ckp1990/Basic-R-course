@@ -131,6 +131,7 @@ if(Student_performance$race.ethnicity[116]=="group B"){
 
 ### Looping the command
 
+## for(i in 1:10){}
 You can clearly see from the above examples, we have to apply same logic for all rows of data frame. It is a repetitive process. so we can run the same script in the loop.
 
 **For example,  to pass the exam the student need to**
@@ -183,9 +184,11 @@ for(j in Student_performance$gender){
 Student_performance$gender_code<-Gender_code
 ```
 
-## while loop or indefente loop
+## while loop or indefinte loop
 
 In both cases above we were sure that now many time loop will iterate. However, some time we do not have idea how many time the loop will iterate. This is called indefinite loop or while loop. Let say we have to generate a random number and add to existing number till the number is greater that equal to 200
+
+#while (conditons){code}
 
 ```{r while-indefinite loop, echo=T}
 My_number <- 0 #stating with zero
@@ -206,7 +209,8 @@ print(flag)
 
 Sometime you have to perform same series of calculation with all the time
  If you have to create pass or grade table every year or for many classes. In these cases it is helpful to write your own function. Let us check if the student have passed or not. 
- 
+
+# name_of_function <- funtion(arg1,arg2...argn){} 
 ```{r function, echo=T}
 grade_of_student<-function(marks){
   final_results <- rep(NA,nrow(marks))
@@ -227,6 +231,7 @@ for(i in 1:nrow(marks)){
   return(final_results)
 }
 Student_performance$grade_fun <- grade_of_student(Student_performance)
+#grade_of_student(Student_performance[Student_performance$gender=="male",])
 ```
 
 
@@ -264,3 +269,4 @@ sapply(Student_performance[,6:8], mean) ## mean of each subject
 tapply(Student_performance$math.score, Student_performance$gender, mean) ## mean base on unique #value of gender
 ````
 
+is.na()

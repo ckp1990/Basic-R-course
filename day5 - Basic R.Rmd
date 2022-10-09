@@ -1,0 +1,131 @@
+---
+title: "Day 5 - Descriptive Statistics"
+author: "Chandan Kumar Pandey"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+In this section we will finally see the basic application of R programming for our data analysis. After getting the cleaned data set, the first set need us to describe the data. This must be done using graphical representation. Using out Student performance data set. 
+
+```{r reading the dataset, echo=T}
+##reading the data set. 
+##note that if you directory is not set to place where data is stores. 
+## you need to use setwd() to set it first. 
+Student_performance <- read.csv("StudentsPerformance.csv",header = T)
+head(Student_performance)
+```
+
+## Descriptive Statistics
+
+As the name suggest, it is use to describe the basic feature of the data. They provide simple summary for your data set without inferring any outcome to it. We can summarise the data in tabular or graphical for. 
+
+For Example. 
+
+```{r tabular summary, echo=T}
+## average marks of the students. 
+Student_performance$average <- round(rowSums(Student_performance[,6:8])/3,2)
+##grouping the data by gender. 
+mean_avg_marks <- tapply(Student_performance$average,Student_performance$gender,FUN = mean)
+sd_avg_marks <- tapply(Student_performance$average,Student_performance$gender,FUN = sd)
+med_avg_marks <- tapply(Student_performance$average,Student_performance$gender,FUN = median)
+count_numbers <- tapply(Student_performance$average,Student_performance$gender,FUN = length)
+marks_avg_gender <- data.frame(mean_avg_marks,sd_avg_marks,med_avg_marks,count_numbers)
+## getting results as output
+write.csv(marks_avg_gender,"mark_by_gender.csv")
+```
+
+## A help from pacakge dplyr.
+
+A package called [dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) can help to summaries your data more effectentive. 
+
+```{r dplyr summary, echo=T}
+#checking if dplyr is installed or not. If not then installing it. 
+if(!require(dplyr)){
+    install.packages("dplyr",dependencies = T)
+    library(dplyr)
+}
+mark_summary <- group_by(Student_performance,gender)%>%
+  summarise(Math.avg = mean(math.score), Math.sd = sd(math.score),
+            writing.mean = mean(writing.score),writng.sd = sd(writing.score),
+            reading.mean = mean(reading.score),reading.sd = sd(reading.score),
+            overall.mean = mean(average),overall.sd = sd(average),
+            count = n())%>%
+  as.data.frame()
+write.csv(mark_summary,"mark_summary.csv")
+```
+
+# Plots for summary 
+
+We will use another package for piloting which is very common these days. It is called ggplot2
+
+```{r ploting}
+#checking if ggplot2 is installed or not. If not then installing it. 
+if(!require(ggplot2)){
+    install.packages("ggplot2",dependencies = T)
+    library(ggplot2)
+}
+##Box plot 
+box_plot<-ggplot(data = Student_performance,aes(x=gender,y=average))
+box_plot+geom_boxplot(aes(color="red"),show.legend = FALSE)+ 
+  theme_classic()+
+  labs(y="Average score of student",x="Gender")
+
+##another way for box plot
+boxplot(Student_performance$average~Student_performance$parental.level.of.education)
+
+##histogram
+hist_marks <- ggplot(data = Student_performance, aes(x=average,fill=gender))
+hist_marks + geom_histogram(aes(position="identity",binwidth = 10,alpha=0.9),
+                            show.legend = T)+theme_classic()
+##with density not actual count
+hist_marks + 
+  geom_histogram(aes(y = ..density..,
+                                position="identity",binwidth = 10,alpha=0.9),
+                 show.legend = T)+theme_classic()
+
+```
+
+
+## pie chart
+
+```{r pie chart, echo=T}
+pie_data<-group_by(Student_performance,parental.level.of.education)%>%
+  summarise(count=n())
+pie_parent_edu <- ggplot(data = pie_data,aes(x="",y=count,fill=parental.level.of.education))
+pie_parent_edu+geom_col(color="black")+coord_polar(theta = "y")
+```
+
+# ANNOVA test. 
+
+Analysis of variance is statically test which is used to see if two group are different from each other. There are some assumption in the which we need to take cosidration of 
+
+1. Independence of case
+2. Normality
+3. Homogeneity
+
+
+
+```{r annova, echo=T}
+##load the data 
+Yeild <- read.csv("./crop_yeild/field_data.csv",header = T)
+## checking the summary of the data
+summary(Yeild)
+##checking the structure of the data
+str(Yeild)
+##basic description of the data. 
+library(ggplot2)
+#boxplot
+plot_box<-ggplot(data = Yeild,aes(x=as.factor(fertilizer),y=yield))
+plot_box+geom_boxplot()
+#histogram
+plot_hist<-ggplot(data = Yeild,aes(x=yield,fill=as.factor(fertilizer)))
+plot_hist+geom_histogram(stat = "bin",position="identity",bins=12,alpha=0.9,
+                         show.legend = F)+
+  theme_classic()
+#Shapiro-Wilk normality test
+shapiro.test(Yeild$yield)
+mod1<-aov(formula = Yeild$yield ~ as.factor(Yeild$fertilizer))
+summary(mod1)
+#posthoc
+Post_hoc <- TukeyHSD(mod1)
+plot(Post_hoc)

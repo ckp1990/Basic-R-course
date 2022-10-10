@@ -124,7 +124,7 @@ plot_hist+geom_histogram(stat = "bin",position="identity",bins=12,alpha=0.9,
   theme_classic()
 #Shapiro-Wilk normality test
 shapiro.test(Yeild$yield)
-mod1<-aov(formula = Yeild$yield ~ as.factor(Yeild$fertilizer))
+mod1<-aov(formula = Yeild$yield ~ as.character(Yeild$fertilizer))
 summary(mod1)
 #posthoc
 Post_hoc <- TukeyHSD(mod1)

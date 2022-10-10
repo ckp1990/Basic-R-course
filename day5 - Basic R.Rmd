@@ -17,7 +17,7 @@ head(Student_performance)
 
 ## Descriptive Statistics
 
-As the name suggest, it is use to describe the basic feature of the data. They provide simple summary for your data set without inferring any outcome to it. We can summarise the data in tabular or graphical for. 
+As the name suggest, it is use to describe the basic feature of the data. They provide simple summary for your data set without inferring any outcome to it. We can summaries the data in tabular or graphical for. 
 
 For Example. 
 
@@ -36,7 +36,7 @@ write.csv(marks_avg_gender,"mark_by_gender.csv")
 
 ## A help from pacakge dplyr.
 
-A package called [dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) can help to summaries your data more effectentive. 
+A package called [dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) can help to summaries your data more effectively. 
 
 ```{r dplyr summary, echo=T}
 #checking if dplyr is installed or not. If not then installing it. 
@@ -65,8 +65,8 @@ if(!require(ggplot2)){
     library(ggplot2)
 }
 ##Box plot 
-box_plot<-ggplot(data = Student_performance,aes(x=gender,y=average))
-box_plot+geom_boxplot(aes(color="red"),show.legend = FALSE)+ 
+box_plot<-ggplot(data = Student_performance,aes(x=gender,y=average,fill=lunch))
+box_plot+geom_boxplot(aes(color="black"),show.legend = T)+ 
   theme_classic()+
   labs(y="Average score of student",x="Gender")
 
@@ -74,8 +74,8 @@ box_plot+geom_boxplot(aes(color="red"),show.legend = FALSE)+
 boxplot(Student_performance$average~Student_performance$parental.level.of.education)
 
 ##histogram
-hist_marks <- ggplot(data = Student_performance, aes(x=average,fill=gender))
-hist_marks + geom_histogram(aes(position="identity",binwidth = 10,alpha=0.9),
+hist_marks <- ggplot(data = Student_performance, aes(x=average,col=gender))
+hist_marks + geom_histogram(aes(position="identity",fill="white",binwidth = 10,alpha=0.5),
                             show.legend = T)+theme_classic()
 ##with density not actual count
 hist_marks + 
@@ -92,12 +92,12 @@ hist_marks +
 pie_data<-group_by(Student_performance,parental.level.of.education)%>%
   summarise(count=n())
 pie_parent_edu <- ggplot(data = pie_data,aes(x="",y=count,fill=parental.level.of.education))
-pie_parent_edu+geom_col(color="black")+coord_polar(theta = "y")
+pie_parent_edu+geom_col(color="black")+coord_polar(theta = "y")+theme_classic()
 ```
 
 # ANNOVA test. 
 
-Analysis of variance is statically test which is used to see if two group are different from each other. There are some assumption in the which we need to take cosidration of 
+Analysis of variance is statically test which is used to see if two group are different from each other. There are some assumption in the which we need to take consideration of 
 
 1. Independence of case
 2. Normality
@@ -120,7 +120,7 @@ plot_box+geom_boxplot()
 #histogram
 plot_hist<-ggplot(data = Yeild,aes(x=yield,fill=as.factor(fertilizer)))
 plot_hist+geom_histogram(stat = "bin",position="identity",bins=12,alpha=0.9,
-                         show.legend = F)+
+                         show.legend = T)+
   theme_classic()
 #Shapiro-Wilk normality test
 shapiro.test(Yeild$yield)

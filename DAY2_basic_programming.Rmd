@@ -1,11 +1,11 @@
 ---
-title: "R- Basic WORKSHOP DAY 2"
+title: "R- Basic WORKSHOP DAY 233"
 output:
   pdf_document: default
   html_document:
     df_print: paged
 author: "Chandan Kumar Pandey"
-date: 06-10-2022
+date: 4-11-2024 
 ---
 
 Today we will start learning the computer language of R. Now it is very important to understand that **R** is not a tools or application but a computer language. Therefore, it is required to have a basic computation logic to start coding in **R**. This document will help you to understand some of the basic theory and logic of coding.

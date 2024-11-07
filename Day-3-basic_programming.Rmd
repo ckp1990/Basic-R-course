@@ -3,7 +3,7 @@ title: "Day 3 and 4 R basic workbook"
 output:
   pdf_document: default
 author: "Chandan Kumar Pandey"
-date: 08-10-2022  
+date: 4-11-2024 
 ---
 
 In today's we will discuss the conditional statements. [ex: if -else],loops,and functions [local] in R
@@ -267,6 +267,6 @@ head(pass_student,10)
 ```{r apply,echo=TRUE}
 sapply(Student_performance[,6:8], mean) ## mean of each subject
 tapply(Student_performance$math.score, Student_performance$gender, mean) ## mean base on unique #value of gender
-````
+```
 
-is.na()
+

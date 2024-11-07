@@ -1,4 +1,4 @@
-##Day 2
+##Day 3
 
 ##after revision 
 
@@ -12,7 +12,7 @@ y <- 100
 
 if (y < x) {
   z=x+y
-  #print("y is greater than x")
+  print("y is less equal to  x")
   print(z)
 }
 
@@ -31,8 +31,11 @@ if(x>y){
 } else if (x==y){
   print("they are equal")
 } else {print("y is bigger")}
+
+
+
 ##nested if statements
-x <- 20
+x <- 41
 
 if (x > 30) {
   print("it is above 30")
@@ -46,9 +49,9 @@ if (x > 30) {
 }
 
 ## multiple conditions
-x<-40L
-if(is.integer(x)==TRUE & x<30){
-  print("x is integer and greater than 30")
+x<-20L
+if(is.integer(x)==TRUE & x>30){
+  print("x is integer and less than 30")
 }
 
 
@@ -65,11 +68,11 @@ z=0
 while (i%%38!=0) {
   z=z+i
   print(z)
+  i=i+1
 }
 
 #for loop
 for(i in 1:10){
-  i=10
   print(i)
   
 }
@@ -81,15 +84,56 @@ for (i in vec_names){
   print(i)
 }
 
+sample_number<-sample(1:100,30,replace = T)
+sample_number
+t=1
+for(x in 1:30){
+  print(x)
+  sample_number[x]<-sample_number[x]+10
+  t=t+1
+}
+
+sample_number
+sum(sample_number)
+cumsum(sample_number)
+mean(sample_number)
+var(sample_number)
+sd(sample_number)
+log(sample_number,10)
+log(sample_number)
+exp(sample_number)
+sqrt(sample_number)
+
+uni_sample_number<-unique(sample_number)
+
+length(uni_sample_number)
+
+m<-matrix(1:100,25,4)
+dim(m)
+nrow(m)
+ncol(m)
+diag(m)
 ## user defined function 
+sample_number
+
+geom_mean <- function(sample_vector) {
+  sample_prod <- prod(sample_vector)
+  z = sample_prod^(1/length(sample_vector))
+  return(z)
+}
+
+
+
+
+
 
 ##area of circle
 
-area_of_circle<-function(radius){
+area_of_circle <- function(radius){
   area<-pi*radius*radius
   return(area)
 }
-y<-areaofcircle(6)
+y<-area_of_circle(radius = 6)
 x<-area_of_circle(4)
 
 ##nested function
@@ -100,6 +144,7 @@ area_of_circle(area_of_circle(5))
 x<-area_of_circle(5)
 x
 area_of_circle(x)
+
 #2. write a function within another function 
 
 func1 <- function(x) {
